@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+  public float ms;
+  Rigidbody2D Rb;
+  // Start is called before the first frame update
+  void Start()
+  {
+    Rb = GetComponent<Rigidbody2D>();
+    Rb.velocity = new Vector2(ms * 3, ms * 3);
+  }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+  // Update is called once per frame
+  void Update()
+  {
+
+  }
 }

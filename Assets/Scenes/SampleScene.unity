@@ -504,7 +504,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: c0d47a0562cc8bb43bacf77dc44e88f5, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -521,7 +521,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87780287f25642d4c9192ac6c551b654, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ms: 1
+  boxPoint: {fileID: 883706243659060017, guid: ee2704fba33bf484ba0086d6a70db1e3, type: 3}
 --- !u!58 &1522436568
 CircleCollider2D:
   m_ObjectHideFlags: 0

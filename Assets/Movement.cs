@@ -40,15 +40,6 @@ public class Movement : MonoBehaviour
 
   private void spawnBoxPoint(int i)
   {
-    // Vector3 randomPos = new Vector3(Random.Range(-2.5f, 2.5f), Random.Range(-2.5f, 2.5f), 0f);
-    // if ((randomPos - transform.position).sqrMagnitude > 3)
-    // {
-    //   Debug.Log($"{i} masuk");
-    //   Instantiate(boxPoint, randomPos, Quaternion.identity);
-    // }else{
-    //   Debug.Log($"{i} tidak masuk");
-    // }
-
     bool isSpawn = false;
     while (!isSpawn)
     {
@@ -63,5 +54,10 @@ public class Movement : MonoBehaviour
         isSpawn = true;
       }
     }
+  }
+
+  private void OnTriggerEnter2D(Collider2D other)
+  {
+    Destroy(other.gameObject);
   }
 }

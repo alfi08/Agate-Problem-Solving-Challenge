@@ -522,7 +522,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boxPoint: {fileID: 883706243659060017, guid: ee2704fba33bf484ba0086d6a70db1e3, type: 3}
-  BoxPointCount: 3
+  BoxPointCount: 10
 --- !u!58 &1522436568
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -18,7 +18,7 @@ public class Movement : MonoBehaviour
 
     for (int i = 0; i < BoxPointCount; i++)
     {
-      spawnBoxPoint(i);
+      spawnBoxPoint();
     }
   }
 
@@ -38,7 +38,7 @@ public class Movement : MonoBehaviour
     }
   }
 
-  private void spawnBoxPoint(int i)
+  private void spawnBoxPoint()
   {
     bool isSpawn = false;
     while (!isSpawn)
@@ -56,8 +56,11 @@ public class Movement : MonoBehaviour
     }
   }
 
-  private void OnTriggerEnter2D(Collider2D other)
+  private IEnumerator OnTriggerEnter2D(Collider2D other)
   {
     Destroy(other.gameObject);
+    Score.scoreValue++;
+    yield return new WaitForSeconds(3);
+    spawnBoxPoint();
   }
 }

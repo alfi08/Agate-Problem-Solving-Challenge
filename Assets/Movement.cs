@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
+  public GameOver gameOverScreen;
   private Rigidbody2D Rb;
   private Vector2 direction;
   private float ms;
@@ -60,6 +61,11 @@ public class Movement : MonoBehaviour
   {
     Destroy(other.gameObject);
     Score.scoreValue++;
+    if (Score.scoreValue == 10)
+    {
+      gameOverScreen.Set();
+      gameObject.SetActive(false);
+    }
     yield return new WaitForSeconds(3);
     spawnBoxPoint();
   }

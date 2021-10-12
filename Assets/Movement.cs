@@ -8,14 +8,18 @@ public class Movement : MonoBehaviour
   private Vector2 direction;
   private float ms;
 
-  [SerializeField]
-  private GameObject boxPoint;
+  [SerializeField] private GameObject boxPoint;
+  [SerializeField] private int BoxPointCount;
   // Start is called before the first frame update
-  void Start()
+  private void Start()
   {
     ms = 3f;
     Rb = GetComponent<Rigidbody2D>();
-    spawnBoxPoint();
+
+    for (int i = 0; i < BoxPointCount; i++)
+    {
+      spawnBoxPoint(i);
+    }
   }
 
   // Update is called once per frame
@@ -34,22 +38,15 @@ public class Movement : MonoBehaviour
     }
   }
 
-  private void spawnBoxPoint()
+  private void spawnBoxPoint(int i)
   {
-    bool isSpawn = false;
-    Vector3 randomPos = new Vector3(Random.Range(-7f, 7f), Random.Range(-4f, 4f), 0f);
-    Debug.Log(randomPos);
-    // while (!isSpawn)
-    // {
-    //   Vector3 randomPos = new Vector3(Random.Range(-7f, 7f), Random.Range(-4f, 4f), 0f);
-    //   if ((randomPos - transform.position).magnitude < 3)
-    //   {
-    //     continue;
-    //   }
-    //   else
-    //   {
-    //     Instantiate(boxPoint, randomPos, Quaternion.identity);
-    //   }
-    // }
+    Vector3 randomPos = new Vector3(Random.Range(-2.5f, 2.5f), Random.Range(-2.5f, 2.5f), 0f);
+    if ((randomPos - transform.position).sqrMagnitude > 3)
+    {
+      Debug.Log($"{i} masuk");
+      Instantiate(boxPoint, randomPos, Quaternion.identity);
+    }else{
+      Debug.Log($"{i} tidak masuk");
+    }
   }
 }
